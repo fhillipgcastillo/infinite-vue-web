@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Todo imput</h1>
-    <span> Todo <input v-model="todoValue" /></span>
+    <input v-model="todoValue" />
     <button @click="todoSave" >Save</button>
   </div>
 </template>

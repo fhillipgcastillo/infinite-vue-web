@@ -8,8 +8,8 @@
 </template>
 
 <script>
-  import TodoForm from './TodoForm.vue';
-  import TodoList from './TodoList.vue';
+  import TodoForm from './Todo/TodoForm.vue';
+  import TodoList from './Todo/TodoList.vue';
 
   export default {
     name:"ToDo",
@@ -19,13 +19,14 @@
         currentTodoValue: "",
         todos: [{
           text: "todo 1",
-          id: 1
+          id: 1,
+          finished: false
         }]
       }
     },
     methods: {
       saveCurrenttodo(value) {
-        this.todos.push(value ? {text:value, id: this.todos.length +1}  : this.currentTodoValue);
+        this.todos.push(value ? {text:value, id: this.todos.length +1, finished: false}  : this.currentTodoValue);
       }
     },
     components: {
