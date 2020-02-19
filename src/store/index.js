@@ -1,22 +1,19 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    todos: [
+    movies: [
       {
-        text: "todo 1",
-        id: 1,
-        finished: false
+        title: "Movie Sample 1",
+        _id: 1
       }
-    ]
+    ],
+    recentlyUpdated: []
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+  mutations: {},
+  actions: {},
+  modules: {}
+});
