@@ -5,6 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    todos: [
+      {
+        text: "todo 1",
+        id: 1,
+        finished: false
+      }
+    ]
   },
   mutations: {
   },

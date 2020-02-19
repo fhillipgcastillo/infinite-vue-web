@@ -10,6 +10,7 @@
 <script>
   import TodoForm from './Todo/TodoForm.vue';
   import TodoList from './Todo/TodoList.vue';
+  import {mapState} from 'vuex';
 
   export default {
     name:"ToDo",
@@ -17,12 +18,11 @@
     data() {
       return {
         currentTodoValue: "",
-        todos: [{
-          text: "todo 1",
-          id: 1,
-          finished: false
-        }]
+        // todos: []
       }
+    },
+    computed: {
+      ...mapState(['todos'])
     },
     methods: {
       saveCurrenttodo(value) {
