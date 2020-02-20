@@ -16,3 +16,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ .movies {
+   padding: 10px;
+ }
+</style>
