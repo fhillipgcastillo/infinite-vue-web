@@ -1,6 +1,10 @@
 <template>
   <div class="movie-preview-contaiener">
-    <img class="img thumbnail" :src="movie.covertImage" />
+    <img class="img thumbnail" 
+      :src="movie.covertImage" 
+      v-on:load="handleImageLoaded" 
+      v-on:error="handleImgLoadFailed" 
+    />
     <div class="card-body">
       <h5 class="title">{{ movie.title }} {{ movie.year }}</h5>
       <p class="synopsis">{{ movie.synopsis }}</p>
@@ -12,10 +16,21 @@
 </template>
 
 <script>
+import defaultImage from '../../assets/default-poster-vertical.jpg';
+
 export default {
   name: "VideoPreview",
   props: {
     movie: { type: Object }
+  },
+  methods: {
+    handleImageLoaded () {},
+    handleImgLoadFailed (event){
+      if(!event.target.failed){
+        event.target.src = defaultImage;
+        event.target.failed = true;
+      }
+    }
   }
 };
 </script>
@@ -32,8 +47,7 @@ export default {
   max-width: 300px;
   border: #44abfc 1px;
   background-color: white;
-  margin: auto;
-  margin-bottom: 15px;
+  margin: 15px;
 }
 .movie-preview-contaiener .thumbnail {
   max-width: 300px;
